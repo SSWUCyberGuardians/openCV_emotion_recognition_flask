@@ -1,4 +1,3 @@
-# ... (import statements and app setup)
 from flask import Flask, render_template, Response
 import cv2
 import numpy as np
@@ -7,8 +6,8 @@ from keras.models import load_model
 app = Flask(__name__)
 
 # Load the emotion recognition model
-detection_model_path = 'haarcascade_files/haarcascade_frontalface_default.xml'
-emotion_model_path = 'models/_mini_XCEPTION.102-0.66.hdf5'
+detection_model_path = 'haarcascade_frontalface_default.xml'
+emotion_model_path = 'Emotion_Model_mini_XCEPTION.keras'
 label_map = ["angry", "disgust", "scared", "happy", "sad", "surprised", "neutral"]
 
 # For webcam video streaming
@@ -17,25 +16,6 @@ face_detection = cv2.CascadeClassifier(detection_model_path)
 emotion_classifier = load_model(emotion_model_path, compile=False)
 
 show_warning = False  # Variable to track whether to show the warning
-
-# ... (import statements and app setup)
-
-# ... (import statements and app setup)
-
-# ... (import statements and app setup)
-
-# ... (import statements and app setup)
-
-# ... (import statements and app setup)
-
-
-# ... (import statements and app setup)
-
-# ... (import statements and app setup)
-
-# ... (import statements and app setup)
-
-# ... (import statements and app setup)
 
 def generate_frames():
     global show_warning
